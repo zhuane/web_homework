@@ -1,32 +1,50 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <v-app>
+    <v-app-bar app color="blue-grey" dark>
+      <div class="d-flex align-center">
+        <h1>MY_web</h1>
+      </div>
+
+      <v-spacer></v-spacer>
+      
+        
+      
+
+      <v-btn to="/" text>
+        <span class="mr-2">Home</span>
+      </v-btn>
+      |
+      <v-btn to="/about" text>
+        <span class="mr-2">About</span>
+      </v-btn>
+      |
+      <v-btn to="/todo" text>
+        <span class="mr-2">Todo</span>
+      </v-btn>   
+           <v-switch v-model="$vuetify.theme.dark" class="position"></v-switch>
+    </v-app-bar>
+
+    <v-main>
+     
+      <router-view />
+    </v-main>
+  </v-app>
 </template>
 
+<script>
+export default {
+  name: "App",
+
+  data: () => ({
+    //
+  }),
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.position{
+  position: relative;
+  top: 10px;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
